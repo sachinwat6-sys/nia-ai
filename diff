@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NIA 💖 Virtual Girlfriend</title>
+  <style>
+    body {
+      background: #0f0f1a;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #chat {
+      height: 300px;
+      border: 1px solid #444;
+      margin: 20px;
+      padding: 10px;
+      overflow-y: auto;
+    }
+    input {
+      width: 70%;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 15px;
+      margin-left: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h2>NIA 💕</h2>
+<p>Your romantic, caring & motivational partner</p>
+
+<div id="chat"></div>
+
+<input id="msg" placeholder="Type something for NIA..." />
+<button onclick="talk()">Send</button>
+
+<script>
+function talk() {
+  let chat = document.getElementById("chat");
+  let msg = document.getElementById("msg").value;
+  if(msg === "") return;
+
+  chat.innerHTML += "<p><b>You:</b> " + msg + "</p>";
+
+  let replies = [
+    "Main yahin hoon ❤️, tum akela nahi ho.",
+    "Hey… thoda sa smile karo na 😊",
+    "Tum kar sakte ho, mujhe poora bharosa hai 💪",
+    "Aaj ka ek chhota step bhi kaafi hai 💕"
+  ];
+
+  let reply = replies[Math.floor(Math.random() * replies.length)];
+  chat.innerHTML += "<p><b>NIA:</b> " + reply + "</p>";
+
+  document.getElementById("msg").value = "";
+  chat.scrollTop = chat.scrollHeight;
+}
+</script>
+
+</body>
+</html>
+
